@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<Nullable>enable</Nullable>
+		<ApplicationId>com.CompanyName.zeng</ApplicationId>
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<AndroidPackageFormat>apk</AndroidPackageFormat>
+		<AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\layout\activity_barcode.xml" />
+	  <None Remove="Resources\layout\activity_face.xml" />
+	  <None Remove="Resources\layout\activity_main.xml" />
+	  <None Remove="Resources\drawable\splash_screen.xml" />
+	  <None Remove="Resources\values\colors.xml" />
+	  <None Remove="Resources\values\strings.xml" />
+	  <None Remove="Resources\values\styles.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidResource Include="..\AvaloniaApplication2\AvaloniaApplication2.Android\Icon.png" Link="Resources\drawable\Icon.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="SkiaSharp.Views" Version="2.88.3" />
+	  <PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.2.0.1" />
+	  <PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.2.0.1" />
+	  <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
+	  <PackageReference Include="Xamarin.Google.MLKit.BarcodeScanning" Version="117.0.3.1" />
+	  <PackageReference Include="Xamarin.Google.MLKit.FaceDetection" Version="116.1.5.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidResource Update="Resources\layout\activity_main.xml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+	  </AndroidResource>
+		<AndroidResource Update="Resources\layout\activity_barcode.xml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:UpdateGeneratedFiles</Generator>
+		</AndroidResource>
+	</ItemGroup>
+
+</Project>
